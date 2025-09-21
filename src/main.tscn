@@ -1,9 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgrejd4v5ywd3"]
 
-[ext_resource type="Script" uid="uid://6gx434rjq1ox" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://6gx434rjq1ox" path="res://props/player.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://85p4vam34uiy" path="res://icon.svg" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://bfpy6e1yodcl1" path="res://enemy.gd" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://bdmhnesxoqowx" path="res://hitbox.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bfpy6e1yodcl1" path="res://props/enemy.gd" id="3_h2yge"]
+
+[sub_resource type="GDScript" id="GDScript_h2yge"]
+script/source = "class_name Hitbox
+extends Area2D
+
+@export var character: Character
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(128, 126)
@@ -26,7 +32,7 @@ script = ExtResource("3_h2yge")
 texture = ExtResource("2_0xm2m")
 
 [node name="Hitbox" type="Area2D" parent="Enemy" node_paths=PackedStringArray("character")]
-script = ExtResource("4_1bvp3")
+script = SubResource("GDScript_h2yge")
 character = NodePath("..")
 
 [node name="Shape" type="CollisionShape2D" parent="Enemy/Hitbox"]

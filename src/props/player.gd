@@ -7,10 +7,6 @@ extends Character
 
 func _ready() -> void:
 	weapon = Weapon.new()
-	weapon.primary_attack = Attack.new()
-	weapon.primary_attack.target_provider = preload("res://content/arc.tscn")
-	weapon.secondary_attack = Attack.new()
-	weapon.special_effect = Effect.new()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack_primary"):

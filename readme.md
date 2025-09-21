@@ -9,29 +9,8 @@ Stipulation: Audio first
 ### Game
 
 - Components
-  - Character
-    - Weapon
-    - Trinket
-    - Relics
-    - Stats
   - Weapon
-    - Attack A (Action)
-    - Attack B (Action)
-    - Special (Action)
     - Collider
-  - Action
-    - Animation
-    - Effect(s)
-    - Cooldown
-  - Animation
-    - Name (e.g. "Thrust")
-    - Wind-up
-    - Active-phase
-      - this is where hitboxes are checked
-    - Wind-down
-  - Effect (abstract)
-    - func resolve(hit_info: HitInfo, context: ActionContext)
-    - This will need to be composable from pure data.
   - ActionContext
     - action: Action
     - source: Character
