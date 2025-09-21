@@ -1,10 +1,57 @@
 # yggdrasil-prototype-1
 
 game on itch.io: [link](https://thewarlock.itch.io/yggdrasil-prototype-1)
-Stipulation: Audio first
- 
+
+Stipulation: Audio first
 
 ## TODO
+
+### Game
+
+- Components
+  - Character
+    - Weapon
+    - Trinket
+    - Relics
+    - Stats
+  - Weapon
+    - Attack A (Action)
+    - Attack B (Action)
+    - Special (Action)
+    - Collider
+  - Action
+    - Animation
+    - Effect(s)
+    - Cooldown
+  - Animation
+    - Name (e.g. "Thrust")
+    - Wind-up
+    - Active-phase
+      - this is where hitboxes are checked
+    - Wind-down
+  - Effect (abstract)
+    - func resolve(hit_info: HitInfo, context: ActionContext)
+    - This will need to be composable from pure data.
+  - ActionContext
+    - action: Action
+    - source: Character
+    - Weapon
+  - HitInfo
+    - ContactPoint (World-space)
+    - target: Character
+  - ActionHandle (resolve the action sequence)
+    - await animation.windup
+    - turn collider on
+    - attach hit_callback
+    - await animation.active
+    - detatch hit_callback
+    - turn collider off
+    - await animation.wind-down
+    - the hit_callback should call into the action's effects
+  - Stats
+    - TBD
+
+### Deployment
 
 - Import the project into Godot
 
