@@ -1,12 +1,17 @@
 class_name ActionHandle
 extends Node
 
-func resolve_action_sequence(animation: Animation, collider: Node, hit_callback: Callable) -> void:
-    await animation.windup
-    collider.set_enabled(true)
-    # Attach hit_callback
-    await animation.active_phase
-    # Detach hit_callback
-    collider.set_enabled(false)
-    await animation.winddown
-    # hit_callback should call into the action's effects
+var context: ActionContext
+
+func _init(action: Action) -> void:
+	context = ActionContext.new()
+	context.action = action
+
+
+func resolve_action_sequence(animation: ActionAnimation, weapon: Weapon, hit_callback: Callable) -> void:
+	var handle_hit = hit_callback.bind(context)
+	await animation.do_windup(weapon)
+	weapon.on_hit.connect(handle_hit)
+	await animation.do_active_phase(weapon)
+	weapon.on_hit.disconnect(handle_hit)
+	await animation.do_winddown(weapon)

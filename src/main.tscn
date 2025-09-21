@@ -1,39 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgrejd4v5ywd3"]
+[gd_scene load_steps=2 format=3 uid="uid://cgrejd4v5ywd3"]
 
-[ext_resource type="Script" uid="uid://6gx434rjq1ox" path="res://props/player.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://85p4vam34uiy" path="res://icon.svg" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://bfpy6e1yodcl1" path="res://props/enemy.gd" id="3_h2yge"]
-
-[sub_resource type="GDScript" id="GDScript_h2yge"]
-script/source = "class_name Hitbox
-extends Area2D
-
-@export var character: Character
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(128, 126)
+[ext_resource type="PackedScene" uid="uid://dxaceu7wfglun" path="res://props/player.tscn" id="1_ig7tw"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(362, 307)
-script = ExtResource("1_ig7tw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_0xm2m")
-
-[node name="Enemy" type="Node2D" parent="."]
-modulate = Color(0.810141, 0.000113877, 0.67351, 1)
-position = Vector2(605, 309)
-script = ExtResource("3_h2yge")
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("2_0xm2m")
-
-[node name="Hitbox" type="Area2D" parent="Enemy" node_paths=PackedStringArray("character")]
-script = SubResource("GDScript_h2yge")
-character = NodePath("..")
-
-[node name="Shape" type="CollisionShape2D" parent="Enemy/Hitbox"]
-shape = SubResource("RectangleShape2D_h2yge")

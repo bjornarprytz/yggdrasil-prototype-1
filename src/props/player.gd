@@ -4,9 +4,8 @@ extends Character
 @export var trinket: Trinket
 @export var relics: Array[Relic] = []
 
-
 func _ready() -> void:
-	weapon = Weapon.new()
+	weapon = %Weapon
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack_primary"):
