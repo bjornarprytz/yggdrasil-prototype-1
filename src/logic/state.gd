@@ -1,6 +1,6 @@
 class_name State
 extends Resource
 
-## Add Initial 
+## TODO: Set based on initial state
 
 var health: int = 100

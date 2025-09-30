@@ -14,6 +14,5 @@ signal on_hit(hit_info: HitInfo)
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if (area is Hitbox and area.prop is Character):
-		print("Weapon hit %s" % area.prop)
 		var hit_info = HitInfo.new(area.prop)
 		on_hit.emit(hit_info)

@@ -1,17 +1,18 @@
 class_name Action
 extends Resource
 
-var animation: ActionSequence = ActionSequence.new()
-var effects: Array[Effect] = []
-var cooldown: float
+var sequence: ActionSequence = ActionSequence.new()
+var effects: Array[Effect] = [DamageEffect.new(2, 4)]
+var cooldown: float = 0.0
 
-# Add action logic here
+## TODO: Implement cooldown
 
 func _on_hit(hit_info: HitInfo, context: ActionContext) -> void:
 	for effect in effects:
-		effect.resolve(hit_info, context)
+		if effect.validate(hit_info, context):
+			effect.resolve(hit_info, context)
 
 func resolve(source: Character) -> void:
-	var handle = ActionHandle.new(self)
+	var handle = ActionHandle.new(self, source)
 	source.get_tree().root.add_child(handle)
-	handle.resolve_action_sequence(animation, source.weapon, _on_hit)
+	handle.resolve_action_sequence(_on_hit)

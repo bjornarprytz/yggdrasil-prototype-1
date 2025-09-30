@@ -1,7 +1,7 @@
 class_name HitInfo
 extends Resource
 
-#var contact_point: Vector2
+## TODO: var contact_point: Vector2
 var target: Character
 
 

@@ -8,25 +8,10 @@ Stipulation: Audio first
 
 ### Game
 
-- Components
-  - ActionContext
-    - action: Action
-    - source: Character
-    - Weapon
-  - HitInfo
-    - ContactPoint (World-space)
-    - target: Character
-  - ActionHandle (resolve the action sequence)
-    - await animation.windup
-    - turn collider on
-    - attach hit_callback
-    - await animation.active
-    - detatch hit_callback
-    - turn collider off
-    - await animation.wind-down
-    - the hit_callback should call into the action's effects
-  - Stats
-    - TBD
+- Jump
+  - Some colliders to represent the world/level
+- Contact point juice
+- Damage float
 
 ### Deployment
 

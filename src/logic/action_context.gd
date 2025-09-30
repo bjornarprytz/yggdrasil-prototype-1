@@ -5,4 +5,8 @@ var action: Action
 var source: Character
 var weapon: Weapon
 
-# Add context logic here
+func _init(_action: Action, _source: Character):
+    action = _action
+    source = _source
+    weapon = _source.weapon
+
