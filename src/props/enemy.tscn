@@ -8,8 +8,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3pfc"]
 size = Vector2(126, 126)
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_tv5y1")
+weapon = NodePath("Weapon")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.826379, 0.14589834, 0.093979724, 1)

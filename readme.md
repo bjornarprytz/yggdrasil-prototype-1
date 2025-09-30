@@ -11,7 +11,6 @@ Stipulation: Audio first
 - Jump
   - Some colliders to represent the world/level
 - Contact point juice
-- Damage float
 
 ### Deployment
 

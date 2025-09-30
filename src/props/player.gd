@@ -1,42 +1,40 @@
 class_name Player
 extends Character
 
-func _ready() -> void:
-    weapon = %Weapon
 
 func _unhandled_input(event: InputEvent) -> void:
-    if event.is_action_pressed("attack_primary"):
-        execute_primary_attack()
-    elif event.is_action_pressed("attack_secondary"):
-        execute_secondary_attack()
-    elif event.is_action_pressed("special"):
-        execute_special()
-    elif event.is_action_pressed("jump"):
-        execute_jump()
-    elif event.is_action_pressed("trinket"):
-        execute_trinket_effect()
+	if event.is_action_pressed("attack_primary"):
+		execute_primary_attack()
+	elif event.is_action_pressed("attack_secondary"):
+		execute_secondary_attack()
+	elif event.is_action_pressed("special"):
+		execute_special()
+	elif event.is_action_pressed("jump"):
+		execute_jump()
+	elif event.is_action_pressed("trinket"):
+		execute_trinket_effect()
 
 func _process(_delta: float) -> void:
-    pass
+	pass
 
 func execute_primary_attack():
-    weapon.primary_attack.resolve(self)
+	weapon.primary_attack.resolve(self)
 
 func execute_secondary_attack():
-    weapon.secondary_attack.resolve(self)
+	weapon.secondary_attack.resolve(self)
 
 func execute_special():
-    weapon.special_effect.resolve(self)
+	weapon.special_effect.resolve(self)
 
 func execute_jump():
-    pass
+	pass
 
 func move(_direction: Vector2):
-    pass
+	pass
 
 func execute_trinket_effect():
-    push_warning("Trinkets not implemented yet")
-    pass
+	push_warning("Trinkets not implemented yet")
+	pass
 
 func _to_string() -> String:
-    return "Player character"
+	return "Player character"
