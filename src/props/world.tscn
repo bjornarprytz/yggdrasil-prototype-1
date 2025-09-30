@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bextllqqjheys"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_psygy"]
+
+[node name="World" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Floor"]
+position = Vector2(542, 639)
+shape = SubResource("WorldBoundaryShape2D_psygy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = 638.0
+offset_right = 1287.0
+offset_bottom = 726.0
+color = Color(0.39713743, 0.0016876085, 0.26930392, 1)

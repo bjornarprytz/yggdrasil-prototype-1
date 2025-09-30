@@ -1,6 +1,8 @@
-class_name State
+class_name Stats
 extends Resource
 
 ## Add Initial 
 
-var health: int = 100
+var move_speed: int = 169
+
+var jump_strength: int = 569

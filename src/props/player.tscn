@@ -1,26 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxaceu7wfglun"]
+[gd_scene load_steps=3 format=3 uid="uid://dxaceu7wfglun"]
 
+[ext_resource type="PackedScene" uid="uid://dhqypdubpeb3x" path="res://props/character.tscn" id="1_jstje"]
 [ext_resource type="Script" uid="uid://6gx434rjq1ox" path="res://props/player.gd" id="1_qytk2"]
-[ext_resource type="Texture2D" uid="uid://85p4vam34uiy" path="res://icon.svg" id="2_imvyu"]
-[ext_resource type="PackedScene" uid="uid://it85cwmmvlo3" path="res://props/hitbox.tscn" id="2_qytk2"]
-[ext_resource type="PackedScene" uid="uid://qa24xlt6b0xw" path="res://props/weapon.tscn" id="4_yesbc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_imvyu"]
-size = Vector2(126, 128)
-
-[node name="Player" type="Node2D" node_paths=PackedStringArray("weapon")]
+[node name="Character" instance=ExtResource("1_jstje")]
 script = ExtResource("1_qytk2")
-weapon = NodePath("Weapon")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_imvyu")
-
-[node name="Hitbox" parent="." node_paths=PackedStringArray("prop") instance=ExtResource("2_qytk2")]
-prop = NodePath("..")
-
-[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_imvyu")
-
-[node name="Weapon" parent="." instance=ExtResource("4_yesbc")]
-unique_name_in_owner = true
-position = Vector2(89, -40)

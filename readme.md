@@ -8,9 +8,7 @@ Stipulation: Audio first
 
 ### Game
 
-- Jump
-  - Some colliders to represent the world/level
-- Contact point juice
+Enemy behaviour
 
 ### Deployment
 

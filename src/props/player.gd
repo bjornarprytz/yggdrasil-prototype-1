@@ -14,8 +14,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("trinket"):
 		execute_trinket_effect()
 
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	super._process(delta)
+	horizontal_velocity = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 
 func execute_primary_attack():
 	weapon.primary_attack.resolve(self)
@@ -27,9 +28,12 @@ func execute_special():
 	weapon.special_effect.resolve(self)
 
 func execute_jump():
+	if is_on_floor():
+		vertical_velocity = - stats.jump_strength
 	pass
 
-func move(_direction: Vector2):
+func move(direction: float):
+	horizontal_velocity = direction
 	pass
 
 func execute_trinket_effect():

@@ -1,26 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://by2pd0whuhjf4"]
+[gd_scene load_steps=3 format=3 uid="uid://by2pd0whuhjf4"]
 
-[ext_resource type="Script" uid="uid://bfpy6e1yodcl1" path="res://props/enemy.gd" id="1_tv5y1"]
-[ext_resource type="Texture2D" uid="uid://85p4vam34uiy" path="res://icon.svg" id="2_f1epj"]
-[ext_resource type="PackedScene" uid="uid://it85cwmmvlo3" path="res://props/hitbox.tscn" id="3_f1epj"]
-[ext_resource type="PackedScene" uid="uid://qa24xlt6b0xw" path="res://props/weapon.tscn" id="4_c3pfc"]
+[ext_resource type="PackedScene" uid="uid://dhqypdubpeb3x" path="res://props/character.tscn" id="1_tv5y1"]
+[ext_resource type="Script" uid="uid://bfpy6e1yodcl1" path="res://props/enemy.gd" id="2_tv5y1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3pfc"]
-size = Vector2(126, 126)
+[node name="Enemy" instance=ExtResource("1_tv5y1")]
+script = ExtResource("2_tv5y1")
 
-[node name="Enemy" type="Node2D" node_paths=PackedStringArray("weapon")]
-script = ExtResource("1_tv5y1")
-weapon = NodePath("Weapon")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.826379, 0.14589834, 0.093979724, 1)
-texture = ExtResource("2_f1epj")
-
-[node name="Hitbox" parent="." node_paths=PackedStringArray("prop") instance=ExtResource("3_f1epj")]
-prop = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_c3pfc")
-
-[node name="Weapon" parent="." instance=ExtResource("4_c3pfc")]
-position = Vector2(-79, -31)
+[node name="Sprite" parent="." index="0"]
+modulate = Color(0.45691687, 0.00014718383, 0.45749074, 1)
