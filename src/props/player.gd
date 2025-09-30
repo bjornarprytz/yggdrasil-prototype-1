@@ -1,9 +1,6 @@
 class_name Player
 extends Character
 
-@export var trinket: Trinket
-@export var relics: Array[Relic] = []
-
 func _ready() -> void:
 	weapon = %Weapon
 
@@ -38,6 +35,5 @@ func move(_direction: Vector2):
 	pass
 
 func execute_trinket_effect():
-	if trinket:
-		trinket.effect.resolve(self)
+	push_warning("Trinkets not implemented yet")
 	pass

@@ -1,7 +1,7 @@
 class_name Action
 extends Resource
 
-var animation: ActionAnimation = ActionAnimation.new()
+var animation: ActionSequence = ActionSequence.new()
 var effects: Array[Effect] = []
 var cooldown: float
 

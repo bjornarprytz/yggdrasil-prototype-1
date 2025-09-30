@@ -8,10 +8,10 @@ func _init(action: Action) -> void:
 	context.action = action
 
 
-func resolve_action_sequence(animation: ActionAnimation, weapon: Weapon, hit_callback: Callable) -> void:
+func resolve_action_sequence(sequence: ActionSequence, weapon: Weapon, hit_callback: Callable) -> void:
 	var handle_hit = hit_callback.bind(context)
-	await animation.do_windup(weapon)
+	await sequence.do_windup(weapon)
 	weapon.on_hit.connect(handle_hit)
-	await animation.do_active_phase(weapon)
+	await sequence.do_active_phase(weapon)
 	weapon.on_hit.disconnect(handle_hit)
-	await animation.do_winddown(weapon)
+	await sequence.do_winddown(weapon)

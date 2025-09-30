@@ -1,7 +1,9 @@
 class_name HitInfo
-extends Node
+extends Resource
 
 #var contact_point: Vector2
 var target: Character
 
-# Add hit info logic here
+
+func _init(_target: Character) -> void:
+    target = _target

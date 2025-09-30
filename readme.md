@@ -9,8 +9,6 @@ Stipulation: Audio first
 ### Game
 
 - Components
-  - Weapon
-    - Collider
   - ActionContext
     - action: Action
     - source: Character
