@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 ## Left (-1) to Right (1)
 var horizontal_velocity: float
+			
 ## Up (-1) to Down (1)
 var vertical_velocity: float
 
@@ -20,7 +21,6 @@ func apply_damage(source: Character, amount: int) -> void:
 	add_child(Create.text_float("-" + str(amount), Color.RED))
 
 func _process(delta: float) -> void:
-	# Apply gravity
 	if not is_on_floor():
 		vertical_velocity += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
 	else:

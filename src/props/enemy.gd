@@ -4,4 +4,4 @@ extends Character
 
 
 func _to_string() -> String:
-	return "Enemy character"
+	return "Enemy"
