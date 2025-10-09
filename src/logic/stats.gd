@@ -3,6 +3,6 @@ extends Resource
 
 ## Add Initial 
 
-var move_speed: int = 169
-
-var jump_strength: int = 569
+@export var move_speed: int = 169
+@export var jump_strength: int = 569
+@export var max_health: int = 100

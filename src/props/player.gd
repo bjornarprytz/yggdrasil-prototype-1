@@ -26,10 +26,6 @@ func execute_secondary_attack():
 func execute_special():
 	weapon.special_effect.resolve(self)
 
-func execute_jump():
-	if is_on_floor():
-		vertical_velocity = -stats.jump_strength
-
 func move(direction: float):
 	horizontal_velocity = direction
 

@@ -2,7 +2,7 @@ class_name Action
 extends Resource
 
 var sequence: ActionSequence = ActionSequence.new()
-var effects: Array[Effect] = [DamageEffect.new(2, 4)]
+var effects: Array[Effect] = [DamageEffect.new(3, 7)]
 var cooldown: float = 0.0
 
 ## TODO: Implement cooldown

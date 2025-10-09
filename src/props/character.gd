@@ -8,8 +8,9 @@ var horizontal_velocity: float
 var vertical_velocity: float
 
 @export var weapon: Weapon
-@export var state: State = State.new()
-@export var stats: Stats = Stats.new()
+@export var stats: Stats
+
+@onready var state: State = State.new(stats)
 
 var damage_effect: CPUParticles2D
 
@@ -20,6 +21,10 @@ func apply_damage(source: Character, amount: int) -> void:
 
 	add_child(Create.text_float("-" + str(amount), Color.RED))
 
+	if state.health <= 0:
+		queue_free()
+		return
+
 func _process(delta: float) -> void:
 	if not is_on_floor():
 		vertical_velocity += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
@@ -28,3 +33,7 @@ func _physics_process(_delta: float) -> void:
 	velocity = Vector2(horizontal_velocity * stats.move_speed, vertical_velocity)
 
 	move_and_slide()
+
+func execute_jump():
+	if is_on_floor():
+		vertical_velocity = - stats.jump_strength

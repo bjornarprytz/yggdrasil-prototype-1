@@ -7,6 +7,10 @@ game on itch.io: [link](https://thewarlock.itch.io/yggdrasil-prototype-1)
 ### Game
 
 - Enemy behaviour
+- Character turning
+- Other weapons
+  - Spear
+  - Sword
 
 ### Deployment
 
