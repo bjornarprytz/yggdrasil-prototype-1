@@ -23,8 +23,6 @@ func apply_damage(source: Character, amount: int) -> void:
 func _process(delta: float) -> void:
 	if not is_on_floor():
 		vertical_velocity += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
-	else:
-		vertical_velocity = 0
 
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2(horizontal_velocity * stats.move_speed, vertical_velocity)

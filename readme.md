@@ -2,13 +2,11 @@
 
 game on itch.io: [link](https://thewarlock.itch.io/yggdrasil-prototype-1)
 
-Stipulation: Audio first
-
 ## TODO
 
 ### Game
 
-Enemy behaviour
+- Enemy behaviour
 
 ### Deployment
 

@@ -28,7 +28,7 @@ func execute_special():
 
 func execute_jump():
 	if is_on_floor():
-		vertical_velocity = - stats.jump_strength
+		vertical_velocity = -stats.jump_strength
 
 func move(direction: float):
 	horizontal_velocity = direction
