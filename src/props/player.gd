@@ -12,10 +12,21 @@ func _input(event: InputEvent) -> void:
 		execute_trinket_effect()
 	if event.is_action_pressed("jump"):
 		execute_jump()
+	
+	
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	horizontal_velocity = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	
+	if Input.is_action_pressed("move_left"):
+		move_left()
+		print("left")
+	elif Input.is_action_pressed("move_right"):
+		move_right()
+		print("right")
+	else:
+		stop_moving()
+
 
 func execute_primary_attack():
 	weapon.primary_attack.resolve(self)
@@ -25,9 +36,6 @@ func execute_secondary_attack():
 
 func execute_special():
 	weapon.special_effect.resolve(self)
-
-func move(direction: float):
-	horizontal_velocity = direction
 
 func execute_trinket_effect():
 	push_warning("Trinkets not implemented yet")

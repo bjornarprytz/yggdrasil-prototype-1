@@ -13,18 +13,21 @@ size = Vector2(126, 128)
 
 [node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
 script = ExtResource("1_r331f")
-weapon = NodePath("Weapon")
+weapon = NodePath("Visuals/Weapon")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Sprite" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("2_ix3j4")
 
-[node name="Hitbox" parent="." node_paths=PackedStringArray("prop") instance=ExtResource("3_5klfi")]
-prop = NodePath("..")
+[node name="Hitbox" parent="Visuals" node_paths=PackedStringArray("prop") instance=ExtResource("3_5klfi")]
+prop = NodePath("../..")
 
-[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+[node name="Shape" type="CollisionShape2D" parent="Visuals/Hitbox"]
 shape = SubResource("RectangleShape2D_5xqcc")
 
-[node name="Weapon" parent="." instance=ExtResource("4_7gy7x")]
+[node name="Weapon" parent="Visuals" instance=ExtResource("4_7gy7x")]
 unique_name_in_owner = true
 position = Vector2(89, -40)
 

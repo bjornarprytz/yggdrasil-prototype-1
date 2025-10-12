@@ -2,15 +2,16 @@ class_name Character
 extends CharacterBody2D
 
 ## Left (-1) to Right (1)
-var horizontal_velocity: float
-			
-## Up (-1) to Down (1)
-var vertical_velocity: float
+var _horizontal_direction: int
+
+## Up to Down
+var _vertical_velocity: float
 
 @export var weapon: Weapon
 @export var stats: Stats
 
 @onready var state: State = State.new(stats)
+@onready var visuals: Node2D = %Visuals
 
 var damage_effect: CPUParticles2D
 
@@ -27,13 +28,21 @@ func apply_damage(source: Character, amount: int) -> void:
 
 func _process(delta: float) -> void:
 	if not is_on_floor():
-		vertical_velocity += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
+		_vertical_velocity += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
+	velocity = Vector2(_horizontal_direction * stats.move_speed, _vertical_velocity)
 
 func _physics_process(_delta: float) -> void:
-	velocity = Vector2(horizontal_velocity * stats.move_speed, vertical_velocity)
-
 	move_and_slide()
+
+func move_left():
+	_horizontal_direction = -1
+	visuals.scale.x = -1
+func move_right():
+	_horizontal_direction = 1
+	visuals.scale.x = 1
+func stop_moving():
+	_horizontal_direction = 0
 
 func execute_jump():
 	if is_on_floor():
-		vertical_velocity = - stats.jump_strength
+		_vertical_velocity = - stats.jump_strength

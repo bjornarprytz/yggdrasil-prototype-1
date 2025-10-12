@@ -7,13 +7,16 @@ func _process(delta: float) -> void:
 	super._process(delta)
 	if (is_on_floor()):
 		execute_jump()
+	_move()
+
+func _move():
 	if target:
 		if target.global_position.x > global_position.x:
-			horizontal_velocity = 1
+			move_right()
 		else:
-			horizontal_velocity = -1
+			move_left()
 	else:
-		horizontal_velocity = 0
+		stop_moving()
 
 func _to_string() -> String:
 	return "Enemy"
