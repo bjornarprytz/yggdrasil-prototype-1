@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://by2pd0whuhjf4"]
+[gd_scene load_steps=5 format=3 uid="uid://by2pd0whuhjf4"]
 
 [ext_resource type="PackedScene" uid="uid://dhqypdubpeb3x" path="res://props/character.tscn" id="1_tv5y1"]
 [ext_resource type="Script" uid="uid://bfpy6e1yodcl1" path="res://props/enemy.gd" id="2_tv5y1"]
+[ext_resource type="Texture2D" uid="uid://d2pjhi8xg2pyf" path="res://assets/img/troll-placeholder.png" id="3_f1epj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3pfc"]
+size = Vector2(116, 200)
 
 [node name="Enemy" instance=ExtResource("1_tv5y1")]
 script = ExtResource("2_tv5y1")
 
-[node name="Sprite" parent="." index="0"]
-modulate = Color(0.45691687, 0.00014718383, 0.45749074, 1)
+[node name="Sprite" parent="Visuals" index="0"]
+texture = ExtResource("3_f1epj")
+
+[node name="Shape" type="CollisionShape2D" parent="Visuals/Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_c3pfc")
+
+[node name="Shape" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_c3pfc")

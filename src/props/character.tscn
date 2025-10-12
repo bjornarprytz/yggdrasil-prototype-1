@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://it85cwmmvlo3" path="res://props/hitbox.tscn" id="3_5klfi"]
 
 [node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
+collision_mask = 2
 script = ExtResource("1_r331f")
 weapon = NodePath("")
 
