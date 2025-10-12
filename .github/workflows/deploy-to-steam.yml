@@ -9,7 +9,7 @@ on:
 env:
   GAME_NAME: yggdrasil-prototype-1
   PROJECT_PATH: "./src/"
-  GODOT_VERSION: 4.5-dev3
+  GODOT_VERSION: 4.5-stable
 
 jobs:
   export-game:
