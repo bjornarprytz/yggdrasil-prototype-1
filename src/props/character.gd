@@ -15,13 +15,16 @@ var _vertical_velocity: float
 
 var damage_effect: CPUParticles2D
 
-func apply_damage(source: Character, amount: int) -> void:
+func apply_damage(_source: Character, amount: int) -> void:
 	state.health -= amount
 
-	print("%s took %d damage from %s, health is now %d" % [self, amount, source, state.health])
+	Create.text_float(self, "-" + str(amount), Color.RED)
 
-	add_child(Create.text_float("-" + str(amount), Color.RED))
+	var tween = create_tween()
+	tween.tween_property(visuals, "modulate", Color.RED, 0.1)
+	tween.tween_property(visuals, "modulate", Color.WHITE, 0.069)
 
+	
 	if state.health <= 0:
 		queue_free()
 		return

@@ -7,9 +7,16 @@ game on itch.io: [link](https://thewarlock.itch.io/yggdrasil-prototype-1)
 ### Game
 
 - Enemy behaviour
-- Other weapons
-  - Spear
-  - Sword
+- Sword
+  - New sprite
+  - Attack effects
+- Player
+  - New sprite
+    - On hit
+- Troll
+  - New sprite
+  - Effects
+    - On hit
 
 ### Deployment
 
