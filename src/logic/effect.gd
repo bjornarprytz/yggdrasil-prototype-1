@@ -1,4 +1,3 @@
-@abstract
 class_name Effect
 extends Resource
 
@@ -12,5 +11,5 @@ func validate(hit_info: HitInfo, action: ActionHandle) -> bool:
 	push_warning("Effect validation failed: Missing target or source.")
 	return false
 
-@abstract
-func resolve(hit_info: HitInfo, action: ActionHandle) -> void
+func resolve(hit_info: HitInfo, action: ActionHandle) -> void:
+	pass
