@@ -1,27 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://qa24xlt6b0xw"]
+[gd_scene load_steps=6 format=3 uid="uid://qa24xlt6b0xw"]
 
 [ext_resource type="Script" uid="uid://b8mgjby16edha" path="res://props/weapon.gd" id="1_4tmq8"]
-[ext_resource type="Texture2D" uid="uid://85p4vam34uiy" path="res://icon.svg" id="2_c5fl3"]
+[ext_resource type="Texture2D" uid="uid://6hjbcyqshel5" path="res://assets/img/hammer.png" id="2_c5fl3"]
 [ext_resource type="PackedScene" uid="uid://it85cwmmvlo3" path="res://props/hitbox.tscn" id="2_yekhi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c5fl3"]
-height = 128.0
+radius = 13.0
+height = 40.0
+
+[sub_resource type="Curve" id="Curve_c5fl3"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_4tmq8")
 id = "Yeeeah"
 
 [node name="Sharp" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(0, -64)
-scale = Vector2(0.171875, 1)
+position = Vector2(0, -31)
 texture = ExtResource("2_c5fl3")
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("prop") instance=ExtResource("2_yekhi")]
 prop = NodePath("..")
 
 [node name="Shape" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -64)
+position = Vector2(0, -58)
+rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_c5fl3")
+
+[node name="Effects" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -58)
+emitting = false
+amount = 200
+lifetime = 0.15000000000000002
+emission_shape = 3
+emission_rect_extents = Vector2(15, 10)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color = Color(1, 1, 0, 1)
+hue_variation_min = -0.91
+hue_variation_max = -0.25
+hue_variation_curve = SubResource("Curve_c5fl3")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -16,6 +16,8 @@ func resolve_action_sequence(hit_callback: Callable) -> void:
 	if current_hit:
 		handle_hit.call(current_hit)
 	source.weapon.on_hit.connect(handle_hit)
+	source.weapon.show_danger()
 	await action.sequence.do_active_phase(source.weapon)
 	source.weapon.on_hit.disconnect(handle_hit)
+	source.weapon.hide_danger()
 	await action.sequence.do_winddown(source.weapon)

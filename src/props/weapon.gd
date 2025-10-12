@@ -9,6 +9,7 @@ var secondary_attack: Action = Action.new()
 var special_effect: Action = Action.new()
 
 @onready var my_hitbox: Hitbox = $Hitbox
+@onready var effects: CPUParticles2D = %Effects
 
 signal on_hit(hit_info: HitInfo)
 
@@ -19,6 +20,12 @@ func check_hitbox() -> HitInfo:
 		if hit_info:
 			return hit_info
 	return null
+
+func show_danger():
+	effects.emitting = true
+
+func hide_danger():
+	effects.emitting = false
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	var hit_info = _area_to_hit_info(area)
