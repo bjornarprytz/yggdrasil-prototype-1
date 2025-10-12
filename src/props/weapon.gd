@@ -12,7 +12,23 @@ var special_effect: Action = Action.new()
 
 signal on_hit(hit_info: HitInfo)
 
+func check_hitbox() -> HitInfo:
+	for area in  my_hitbox.get_overlapping_areas():
+		var hit_info = _area_to_hit_info(area)
+		
+		if hit_info:
+			return hit_info
+	return null
+
 func _on_hitbox_area_entered(area: Area2D) -> void:
+	var hit_info = _area_to_hit_info(area)
+	
+	if hit_info:
+		on_hit.emit(hit_info)
+
+func _area_to_hit_info(area: Area2D) -> HitInfo:
 	if (area is Hitbox and area.prop is Character):
 		var hit_info = HitInfo.new(area.prop)
-		on_hit.emit(hit_info)
+		return hit_info
+	
+	return null

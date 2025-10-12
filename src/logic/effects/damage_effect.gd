@@ -9,5 +9,5 @@ func _init(_min_damage: int = 1, _max_damage: int = 1) -> void:
     max_damage = _max_damage
 
 
-func resolve(hit_info: HitInfo, context: ActionContext) -> void:
-    hit_info.target.apply_damage(context.source, randi_range(min_damage, max_damage))
+func resolve(hit_info: HitInfo, action: ActionHandle) -> void:
+    hit_info.target.apply_damage(action.source, randi_range(min_damage, max_damage))

@@ -2,9 +2,9 @@
 class_name Effect
 extends Resource
 
-func validate(hit_info: HitInfo, context: ActionContext) -> bool:
-	if hit_info.target and context.source:
-		if hit_info.target != context.source:
+func validate(hit_info: HitInfo, action: ActionHandle) -> bool:
+	if hit_info.target and action.source:
+		if hit_info.target != action.source:
 			return true
 		push_warning("Effect cannot target the source character itself.")
 		return false
@@ -13,4 +13,4 @@ func validate(hit_info: HitInfo, context: ActionContext) -> bool:
 	return false
 
 @abstract
-func resolve(hit_info: HitInfo, context: ActionContext) -> void
+func resolve(hit_info: HitInfo, action: ActionHandle) -> void

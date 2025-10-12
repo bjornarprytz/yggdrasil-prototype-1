@@ -14,16 +14,13 @@ func _input(event: InputEvent) -> void:
 		execute_jump()
 	
 	
-
 func _process(delta: float) -> void:
 	super._process(delta)
 	
 	if Input.is_action_pressed("move_left"):
 		move_left()
-		print("left")
 	elif Input.is_action_pressed("move_right"):
 		move_right()
-		print("right")
 	else:
 		stop_moving()
 

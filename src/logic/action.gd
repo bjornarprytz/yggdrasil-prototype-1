@@ -7,10 +7,10 @@ var cooldown: float = 0.0
 
 ## TODO: Implement cooldown
 
-func _on_hit(hit_info: HitInfo, context: ActionContext) -> void:
+func _on_hit(hit_info: HitInfo, action: ActionHandle) -> void:
 	for effect in effects:
-		if effect.validate(hit_info, context):
-			effect.resolve(hit_info, context)
+		if effect.validate(hit_info, action):
+			effect.resolve(hit_info, action)
 
 func resolve(source: Character) -> void:
 	var handle = ActionHandle.new(self, source)
