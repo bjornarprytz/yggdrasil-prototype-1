@@ -1,0 +1,73 @@
+[gd_resource type="Theme" format=3 uid="uid://bl4ipssn6vqnw"]
+
+[ext_resource type="FontFile" uid="uid://dcf1hls2gfcfc" path="res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Regular.ttf" id="1_1jskv"]
+[ext_resource type="Texture2D" uid="uid://b3j5t5dtouj45" path="res://assets/panel-texture.png" id="1_1s8yl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jskv"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+bg_color = Color(0.06352941, 0.23294118, 0.16235293, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.6431373, 0.39607844, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckqs0"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+bg_color = Color(0.07058824, 0.25882354, 0.18039216, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.6431373, 0.39607844, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb3ii"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+bg_color = Color(0.060000006, 0.22000001, 0.15333334, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.6431373, 0.39607844, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fmp4h"]
+content_margin_left = 25.0
+content_margin_top = 15.0
+content_margin_right = 25.0
+content_margin_bottom = 15.0
+texture = ExtResource("1_1s8yl")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+
+[resource]
+default_font = ExtResource("1_1jskv")
+default_font_size = 24
+Button/styles/hover = SubResource("StyleBoxFlat_1jskv")
+Button/styles/normal = SubResource("StyleBoxFlat_ckqs0")
+Button/styles/pressed = SubResource("StyleBoxFlat_bb3ii")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_fmp4h")
+Title/base_type = &"RichTextLabel"
+Title/font_sizes/normal_font_size = 48

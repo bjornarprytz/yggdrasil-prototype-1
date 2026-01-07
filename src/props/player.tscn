@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxaceu7wfglun"]
+[gd_scene format=3 uid="uid://dxaceu7wfglun"]
 
 [ext_resource type="PackedScene" uid="uid://dhqypdubpeb3x" path="res://props/character.tscn" id="1_jstje"]
 [ext_resource type="Script" uid="uid://6gx434rjq1ox" path="res://props/player.gd" id="1_qytk2"]
@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnlph"]
 size = Vector2(84, 122)
 
-[node name="Character" node_paths=PackedStringArray("weapon") instance=ExtResource("1_jstje")]
+[node name="Character" unique_id=514437398 node_paths=PackedStringArray("weapon") instance=ExtResource("1_jstje")]
 script = ExtResource("1_qytk2")
 weapon = NodePath("Visuals/Weapon")
 
@@ -17,11 +17,11 @@ position = Vector2(-5.9604645e-08, -2)
 scale = Vector2(1.9375001, 1.96875)
 texture = ExtResource("3_yesbc")
 
-[node name="Shape" type="CollisionShape2D" parent="Visuals/Hitbox" index="0"]
+[node name="Shape" type="CollisionShape2D" parent="Visuals/Hitbox" index="0" unique_id=382719850]
 shape = SubResource("RectangleShape2D_mnlph")
 
-[node name="Weapon" parent="Visuals" index="2" instance=ExtResource("3_imvyu")]
+[node name="Weapon" parent="Visuals" index="2" unique_id=1092133426 instance=ExtResource("3_imvyu")]
 position = Vector2(38, 10)
 
-[node name="Shape" type="CollisionShape2D" parent="." index="1"]
+[node name="Shape" type="CollisionShape2D" parent="." index="1" unique_id=1837465219]
 shape = SubResource("RectangleShape2D_mnlph")

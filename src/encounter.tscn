@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cgrejd4v5ywd3"]
+
+[ext_resource type="Script" uid="uid://bdufq5ovpe5ll" path="res://encounter.gd" id="1_acy04"]
+[ext_resource type="PackedScene" uid="uid://dxaceu7wfglun" path="res://props/player.tscn" id="2_wg7k5"]
+[ext_resource type="Script" uid="uid://8gud4glhkef2" path="res://logic/stats.gd" id="3_dmif6"]
+[ext_resource type="PackedScene" uid="uid://by2pd0whuhjf4" path="res://props/enemy.tscn" id="4_nfnvt"]
+[ext_resource type="PackedScene" uid="uid://bextllqqjheys" path="res://props/world.tscn" id="5_rj1qx"]
+
+[sub_resource type="Resource" id="Resource_1bvp3"]
+script = ExtResource("3_dmif6")
+metadata/_custom_type_script = "uid://8gud4glhkef2"
+
+[sub_resource type="Resource" id="Resource_lquwl"]
+script = ExtResource("3_dmif6")
+move_speed = 69
+jump_strength = 400
+max_health = 30
+metadata/_custom_type_script = "uid://8gud4glhkef2"
+
+[node name="Encounter" type="Node2D" unique_id=1320448796]
+script = ExtResource("1_acy04")
+
+[node name="Player" parent="." unique_id=2115812428 instance=ExtResource("2_wg7k5")]
+position = Vector2(362, 307)
+stats = SubResource("Resource_1bvp3")
+
+[node name="Enemy" parent="." unique_id=999533496 node_paths=PackedStringArray("target") instance=ExtResource("4_nfnvt")]
+position = Vector2(593, 306)
+target = NodePath("../Player")
+stats = SubResource("Resource_lquwl")
+
+[node name="World" parent="." unique_id=1381484822 instance=ExtResource("5_rj1qx")]

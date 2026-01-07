@@ -1,30 +1,72 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgrejd4v5ywd3"]
+[gd_scene format=3 uid="uid://mkcc1pqrt2em"]
 
-[ext_resource type="PackedScene" uid="uid://dxaceu7wfglun" path="res://props/player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://by2pd0whuhjf4" path="res://props/enemy.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://8gud4glhkef2" path="res://logic/stats.gd" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bextllqqjheys" path="res://props/world.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://rkkubvefi5pv" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Theme" uid="uid://bl4ipssn6vqnw" path="res://theme/generated/global_theme.tres" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dhp5ktk2vwidh" path="res://assets/img/white-square.png" id="3_h2yge"]
 
-[sub_resource type="Resource" id="Resource_1bvp3"]
-script = ExtResource("3_1bvp3")
-metadata/_custom_type_script = "uid://8gud4glhkef2"
+[sub_resource type="Curve" id="Curve_1bvp3"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="Resource" id="Resource_lquwl"]
-script = ExtResource("3_1bvp3")
-move_speed = 69
-jump_strength = 400
-max_health = 30
-metadata/_custom_type_script = "uid://8gud4glhkef2"
+[node name="Main" type="Node2D" unique_id=2042684129]
+script = ExtResource("1_0xm2m")
 
-[node name="Main" type="Node2D"]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1091335059]
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(362, 307)
-stats = SubResource("Resource_1bvp3")
+[node name="Menu" type="PanelContainer" parent="UI" unique_id=854659581]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -45.0
+offset_right = 90.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ig7tw")
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_0xm2m")]
-position = Vector2(593, 306)
-target = NodePath("../Player")
-stats = SubResource("Resource_lquwl")
+[node name="Items" type="VBoxContainer" parent="UI/Menu" unique_id=1857102725]
+layout_mode = 2
 
-[node name="World" parent="." instance=ExtResource("3_h2yge")]
+[node name="GameTitle" type="RichTextLabel" parent="UI/Menu/Items" unique_id=53783717]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "Yggdrasil"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="UI/Menu/Items" unique_id=1117981892]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="UI/Menu/Items" unique_id=1974817508]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Encounter!"
+
+[node name="Fancyness" type="CPUParticles2D" parent="UI/Menu/Items/StartButton" unique_id=1008894514]
+position = Vector2(129.5, 30)
+amount = 12
+texture = ExtResource("3_h2yge")
+emission_shape = 3
+emission_rect_extents = Vector2(125, 30)
+gravity = Vector2(0, -60)
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_1bvp3")
+
+[node name="Spacer2" type="Control" parent="UI/Menu/Items" unique_id=101548448]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[connection signal="mouse_entered" from="UI/Menu/Items/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Menu/Items/StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="UI/Menu/Items/StartButton" to="." method="_on_start_button_pressed"]
