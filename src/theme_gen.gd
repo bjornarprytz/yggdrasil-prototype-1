@@ -12,10 +12,15 @@ var button_pressed_color = button_color.darkened(0.15)
 var button_border_color = Color("00a465ff")
 var default_border_width = 1
 var default_corner_radius = 5
-var default_font_size = 24
+var default_font_size = 32
+var title_font_size = 64
 var panel_texture = preload("res://assets/panel-texture.png")
-var default_font = preload("res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Regular.ttf")
-var default_content_margins = content_margins(25, 15)
+var card_panel_texture = preload("res://assets/img/card-panel-texture.png")
+var text_background = preload("res://assets/img/text-background.png")
+
+var default_font = preload("res://assets/fonts/Tiny5/Tiny5-Regular.ttf")
+var title_font = preload("res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Regular.ttf")
+var default_content_margins = content_margins(45, 35)
 
 func define_theme():
 	define_default_font(default_font)
@@ -40,7 +45,24 @@ func define_theme():
 	})
 	
 	define_variant_style("Title", "RichTextLabel", {
-		normal_font_size = default_font_size * 2
+		normal_font = title_font,
+		normal_font_size = title_font_size
+	})
+	
+	define_variant_style("PowerUp", "PanelContainer", {
+		panel = stylebox_texture({
+			texture = card_panel_texture,
+			texture_margin_ = texture_margins(9),
+			content_margin_ = content_margins(25, 20)
+		})
+	})
+	
+	define_variant_style("TextBackground", "PanelContainer", {
+		panel = stylebox_texture({
+			texture = text_background,
+			texture_margin_ = texture_margins(6),
+			content_margin_ = default_content_margins
+		})
 	})
 	
 	define_style("PanelContainer", {

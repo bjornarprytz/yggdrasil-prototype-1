@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dc2tbmyrtwuwj"]
+
+[ext_resource type="Script" uid="uid://d4j7wm0bpomk6" path="res://text_box.gd" id="1_k7ve7"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=807865520]
+texture_filter = 3
+offset_right = 383.0
+offset_bottom = 150.0
+theme_type_variation = &"TextBackground"
+script = ExtResource("1_k7ve7")
+
+[node name="TextLabel" type="RichTextLabel" parent="." unique_id=666702659]
+unique_name_in_owner = true
+layout_mode = 2
+fit_content = true
+scroll_active = false

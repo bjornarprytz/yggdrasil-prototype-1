@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://kj838p74hdyx"]
+
+[ext_resource type="PackedScene" uid="uid://0p1skmnn5tq1" path="res://card.tscn" id="1_vhvtn"]
+
+[node name="PickPower" type="Node2D" unique_id=1621754992]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=495354053]
+
+[node name="CenterContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1525120389]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -122.5
+offset_right = 251.5
+offset_bottom = 152.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=582668903]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Card" parent="CanvasLayer/CenterContainer/HBoxContainer" unique_id=284178042 instance=ExtResource("1_vhvtn")]
+layout_mode = 2
+
+[node name="Card2" parent="CanvasLayer/CenterContainer/HBoxContainer" unique_id=2009720798 instance=ExtResource("1_vhvtn")]
+layout_mode = 2

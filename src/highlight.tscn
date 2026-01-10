@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c6fg3aja2kl82"]
+
+[ext_resource type="Texture2D" uid="uid://bgjupk3u5iwri" path="res://assets/img/point-light-trans.png" id="1_lnphh"]
+[ext_resource type="Script" uid="uid://c8jq5lsqcjn8m" path="res://highlight.gd" id="2_nhdu0"]
+
+[sub_resource type="Curve" id="Curve_nhdu0"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Highlight" type="CPUParticles2D" unique_id=612346994]
+amount = 12
+texture = ExtResource("1_lnphh")
+emission_shape = 3
+emission_rect_extents = Vector2(125, 30)
+gravity = Vector2(0, -60)
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_nhdu0")
+script = ExtResource("2_nhdu0")

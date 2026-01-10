@@ -40,6 +40,10 @@ project/assembly_name="yggdrasil-prototype-1"
 
 enabled=PackedStringArray("res://addons/theme_gen_save_sync/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://bl4ipssn6vqnw"
+
 [importer_defaults]
 
 texture={

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://qa24xlt6b0xw"]
+[gd_scene format=3 uid="uid://qa24xlt6b0xw"]
 
 [ext_resource type="Script" uid="uid://b8mgjby16edha" path="res://props/weapon.gd" id="1_4tmq8"]
 [ext_resource type="Texture2D" uid="uid://6hjbcyqshel5" path="res://assets/img/hammer.png" id="2_c5fl3"]
 [ext_resource type="PackedScene" uid="uid://it85cwmmvlo3" path="res://props/hitbox.tscn" id="2_yekhi"]
+[ext_resource type="Texture2D" uid="uid://bgjupk3u5iwri" path="res://assets/img/point-light-trans.png" id="4_q7vlm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c5fl3"]
 radius = 13.0
@@ -13,34 +14,35 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Weapon" type="Node2D"]
+[node name="Weapon" type="Node2D" unique_id=1657493860]
 script = ExtResource("1_4tmq8")
 id = "Yeeeah"
 
-[node name="Sharp" type="Sprite2D" parent="."]
+[node name="Sharp" type="Sprite2D" parent="." unique_id=1103913131]
 position = Vector2(0, -31)
 texture = ExtResource("2_c5fl3")
 
-[node name="Hitbox" parent="." node_paths=PackedStringArray("prop") instance=ExtResource("2_yekhi")]
+[node name="Hitbox" parent="." unique_id=1821478957 node_paths=PackedStringArray("prop") instance=ExtResource("2_yekhi")]
 prop = NodePath("..")
 
-[node name="Shape" type="CollisionShape2D" parent="Hitbox"]
+[node name="Shape" type="CollisionShape2D" parent="Hitbox" unique_id=1181898326]
 position = Vector2(0, -58)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_c5fl3")
 
-[node name="Effects" type="CPUParticles2D" parent="."]
+[node name="Effects" type="CPUParticles2D" parent="." unique_id=9349392]
 unique_name_in_owner = true
 position = Vector2(0, -58)
 emitting = false
 amount = 200
+texture = ExtResource("4_q7vlm")
 lifetime = 0.15000000000000002
 emission_shape = 3
 emission_rect_extents = Vector2(15, 10)
 spread = 180.0
 gravity = Vector2(0, 0)
-scale_amount_min = 2.0
-scale_amount_max = 5.0
+scale_amount_min = 0.01
+scale_amount_max = 0.03
 color = Color(1, 1, 0, 1)
 hue_variation_min = -0.91
 hue_variation_max = -0.25
