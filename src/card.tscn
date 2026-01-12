@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://6hjbcyqshel5" path="res://assets/img/hammer.png" id="1_kikvd"]
 [ext_resource type="Script" uid="uid://bsc8wovpfom6p" path="res://item_card.gd" id="1_q5obu"]
 [ext_resource type="PackedScene" uid="uid://dc2tbmyrtwuwj" path="res://text_box.tscn" id="2_rjlel"]
-[ext_resource type="PackedScene" uid="uid://c6fg3aja2kl82" path="res://highlight.tscn" id="4_e484p"]
 
 [node name="Card" type="PanelContainer" unique_id=284178042]
 texture_filter = 3
-offset_right = 344.0
-offset_bottom = 482.0
+offset_right = 297.0
+offset_bottom = 395.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_type_variation = &"PowerUp"
 script = ExtResource("1_q5obu")
 
@@ -25,7 +25,7 @@ stretch_mode = 5
 [node name="Info" parent="Contents" unique_id=807865520 instance=ExtResource("2_rjlel")]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 2
-text = "This is a hammer. It hits hard"
+text = "Hello world"
 
-[node name="Highlight" parent="." unique_id=612346994 instance=ExtResource("4_e484p")]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -17,6 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="yggdrasil-prototype-1"
 run/main_scene="uid://mkcc1pqrt2em"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.9016053, 0.65618956, 0.47708553, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,6 +25,7 @@ config/icon="res://icon.svg"
 Utility="*res://autoloads/utility.gd"
 Events="*res://autoloads/event_bus.gd"
 Create="*res://autoloads/factory.gd"
+NodeEffects="*uid://bvueo0nhps643"
 
 [display]
 
@@ -102,3 +104,4 @@ move_right={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.19871253, 0.34823528, 0.10978105, 1)

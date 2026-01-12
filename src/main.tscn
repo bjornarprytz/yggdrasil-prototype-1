@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://rkkubvefi5pv" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Theme" uid="uid://bl4ipssn6vqnw" path="res://theme/generated/global_theme.tres" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://c6fg3aja2kl82" path="res://highlight.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=2042684129]
 script = ExtResource("1_0xm2m")
@@ -44,8 +43,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Start Encounter!"
-
-[node name="Highlight" parent="UI/Menu/Items/StartButton" unique_id=612346994 instance=ExtResource("3_h2yge")]
 
 [node name="Spacer2" type="Control" parent="UI/Menu/Items" unique_id=101548448]
 custom_minimum_size = Vector2(0, 20)

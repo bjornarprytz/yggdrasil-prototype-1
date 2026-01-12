@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b8qu3qc1ajr50"]
+
+[ext_resource type="Script" uid="uid://br4dwq6ybofl6" path="res://sheen.gd" id="1_7pk0w"]
+
+[node name="Sheen" type="Node2D" unique_id=2073769483]
+script = ExtResource("1_7pk0w")
+
+[node name="Zone" type="ColorRect" parent="." unique_id=1353813906]
+unique_name_in_owner = true
+clip_children = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Light" type="ColorRect" parent="Zone" unique_id=998002497]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -9.581613
+offset_top = -64.172035
+offset_right = 7.902877
+offset_bottom = 104.12173
+rotation = 0.46149457
+mouse_filter = 2

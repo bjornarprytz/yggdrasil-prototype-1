@@ -33,7 +33,7 @@ func define_theme():
 
 		content_margin_ = default_content_margins,
 		border_ = border_width(default_border_width),
-		corner_ = corner_radius(default_corner_radius) 
+		corner_ = corner_radius(default_corner_radius)
 	})
 
 	var button_hover_style = inherit(button_style, {
@@ -69,7 +69,10 @@ func define_theme():
 		panel = stylebox_texture({
 			texture = panel_texture,
 			texture_margin_ = texture_margins(9),
-			content_margin_ = default_content_margins
+			content_margin_ = default_content_margins,
+			axis_stretch_horizontal = StyleBoxTexture.AXIS_STRETCH_MODE_TILE_FIT,
+			axis_stretch_vertical = StyleBoxTexture.AXIS_STRETCH_MODE_TILE_FIT
+			
 		})
 	})
 
