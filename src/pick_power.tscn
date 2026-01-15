@@ -14,29 +14,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.20932215, 0.19757664, 0.0012782805, 1)
 
-[node name="CenterContainer" type="PanelContainer" parent="CanvasLayer/ColorRect" unique_id=1525120389]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = -137.5
-offset_right = 211.0
-offset_bottom = 137.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect" unique_id=582668903]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 257.5
+offset_right = 935.0
+offset_bottom = 462.5
+theme_override_constants/separation = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect/CenterContainer" unique_id=582668903]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Card" parent="CanvasLayer/ColorRect/CenterContainer/HBoxContainer" unique_id=284178042 instance=ExtResource("1_vhvtn")]
+[node name="Card" parent="CanvasLayer/ColorRect/HBoxContainer" unique_id=284178042 instance=ExtResource("1_vhvtn")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Card2" parent="CanvasLayer/ColorRect/CenterContainer/HBoxContainer" unique_id=2009720798 instance=ExtResource("1_vhvtn")]
+[node name="Card2" parent="CanvasLayer/ColorRect/HBoxContainer" unique_id=2009720798 instance=ExtResource("1_vhvtn")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Card3" parent="CanvasLayer/ColorRect/HBoxContainer" unique_id=566770370 instance=ExtResource("1_vhvtn")]
 layout_mode = 2
 size_flags_horizontal = 3

@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dcf1hls2gfcfc" path="res://assets/fonts/Bona_Nova_SC/BonaNovaSC-Regular.ttf" id="1_1jskv"]
 [ext_resource type="Texture2D" uid="uid://b3j5t5dtouj45" path="res://assets/panel-texture.png" id="1_fmp4h"]
-[ext_resource type="Texture2D" uid="uid://tmmnewclalh2" path="res://assets/img/card-panel-texture.png" id="2_7o8n8"]
+[ext_resource type="Texture2D" uid="uid://rgi646nxuquq" path="res://assets/img/stone-texture.png" id="2_fmp4h"]
 [ext_resource type="Texture2D" uid="uid://dr3c10ijfnuvy" path="res://assets/img/text-background.png" id="3_v28v3"]
 [ext_resource type="FontFile" uid="uid://g3nic5frbyae" path="res://assets/fonts/Tiny5/Tiny5-Regular.ttf" id="5_fmp4h"]
 
@@ -72,13 +72,42 @@ content_margin_left = 25.0
 content_margin_top = 20.0
 content_margin_right = 25.0
 content_margin_bottom = 20.0
-texture = ExtResource("2_7o8n8")
-texture_margin_left = 9.0
-texture_margin_top = 9.0
-texture_margin_right = 9.0
-texture_margin_bottom = 9.0
+texture = ExtResource("2_fmp4h")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osdj8"]
+content_margin_left = 25.0
+content_margin_top = 20.0
+content_margin_right = 25.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_fmp4h")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isps8"]
+content_margin_left = 25.0
+content_margin_top = 20.0
+content_margin_right = 25.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_fmp4h")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.9647059, 0.9647059, 0.87647057, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mee3s"]
 content_margin_left = 45.0
 content_margin_top = 35.0
 content_margin_right = 45.0
@@ -96,10 +125,12 @@ Button/styles/hover = SubResource("StyleBoxFlat_fmp4h")
 Button/styles/normal = SubResource("StyleBoxFlat_7o8n8")
 Button/styles/pressed = SubResource("StyleBoxFlat_v28v3")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_jc1pf")
-PowerUp/base_type = &"PanelContainer"
-PowerUp/styles/panel = SubResource("StyleBoxTexture_imp78")
+PowerUp/base_type = &"Button"
+PowerUp/styles/hover = SubResource("StyleBoxTexture_imp78")
+PowerUp/styles/normal = SubResource("StyleBoxTexture_osdj8")
+PowerUp/styles/pressed = SubResource("StyleBoxTexture_isps8")
 TextBackground/base_type = &"PanelContainer"
-TextBackground/styles/panel = SubResource("StyleBoxTexture_osdj8")
+TextBackground/styles/panel = SubResource("StyleBoxTexture_mee3s")
 Title/base_type = &"RichTextLabel"
 Title/font_sizes/normal_font_size = 64
 Title/fonts/normal_font = ExtResource("1_1jskv")

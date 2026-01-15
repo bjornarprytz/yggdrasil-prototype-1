@@ -16,3 +16,9 @@ game on itch.io: [link](https://thewarlock.itch.io/yggdrasil-prototype-1)
 ### Deployment
 
 - Push release with `./push_release.sh`
+
+
+## Attribution
+
+- Sound effects:
+  - Sound Effect by <a href="https://pixabay.com/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=194553">LordSonny</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=194553">Pixabay</a>

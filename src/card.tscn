@@ -22,7 +22,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Card" type="Button" parent="." unique_id=1771573506]
-texture_filter = 3
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

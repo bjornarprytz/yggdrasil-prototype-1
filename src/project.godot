@@ -26,6 +26,7 @@ Utility="*res://autoloads/utility.gd"
 Events="*res://autoloads/event_bus.gd"
 Create="*res://autoloads/factory.gd"
 NodeEffects="*uid://bvueo0nhps643"
+Audio="*uid://d2j3wdh8ilo6g"
 
 [display]
 

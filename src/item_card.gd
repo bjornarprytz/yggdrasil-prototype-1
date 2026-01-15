@@ -5,6 +5,7 @@ var move_tween: Tween
 
 func _on_mouse_entered() -> void:
 	_move_to(Vector2(-1, -1))
+	Audio.play(preload("res://assets/sound/stone-scrape.wav"))
 
 func _on_mouse_exited() -> void:
 	_move_to(Vector2.ZERO)
@@ -31,3 +32,4 @@ func _move_to(pos: Vector2):
 
 func _boom() -> void:
 	NodeEffects.dust(self)
+	Audio.play(preload("res://assets/sound/rock-impact.mp3"))
