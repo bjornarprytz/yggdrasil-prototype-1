@@ -4,7 +4,8 @@ extends Node2D
 # Add factory methods for common scenes here. Access through the Create singleton
 
 var text_float_factory: PackedScene = preload("res://props/text_float.tscn")
-var sheen_factory: PackedScene = preload("res://sheen.tscn")
+var sheen_factory: PackedScene = preload("res://effects/sheen.tscn")
+var dust_factory: PackedScene = preload("res://effects/dust.tscn")
 
 func text_float(target: Node2D, text: String, color: Color) -> TextFloat:
 	var instance = text_float_factory.instantiate() as TextFloat
@@ -18,6 +19,7 @@ func text_float(target: Node2D, text: String, color: Color) -> TextFloat:
 	return instance
 
 func sheen() -> Sheen:
-	var instance = sheen_factory.instantiate() as Sheen
+	return sheen_factory.instantiate() as Sheen
 
-	return instance
+func dust() -> Dust:
+	return dust_factory.instantiate() as Dust

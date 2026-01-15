@@ -30,6 +30,40 @@ func shake(node: CanvasItem, n_shakes: int = 5, magnitude: float = 10.0, speed: 
 
 	return tween
 
+func move_by(node: CanvasItem, delta: Vector2, duration: float) -> Tween:
+	var tween = node.create_tween()
+	
+	tween.tween_property(node, "position", delta, duration).as_relative()
+	
+	return tween
+
+func move_to(node: CanvasItem, target: Vector2, duration: float) -> Tween:
+	var tween = node.create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(node, "position", target, duration)
+	
+	return tween
+
+func dust(node: Control) -> void:
+	var n = Create.dust()
+	n.setup_up(node.size)
+	node.add_child(n)
+
+	var e = Create.dust()
+	e.setup_right(node.size)
+	node.add_child(e)
+
+	var s = Create.dust()
+	s.setup_down(node.size)
+	node.add_child(s)
+
+	var w = Create.dust()
+	w.setup_left(node.size)
+	node.add_child(w)
+	
+	for child in [n, e, s, w]:
+		child.show_behind_parent = true
+		child.trigger()
+
 func sheen(node: CanvasItem, duration: float = 0.5) -> Tween:
 	var effect = Create.sheen()
 	node.add_child(effect)

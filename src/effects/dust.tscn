@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dwgjv622xe1qk"]
+
+[ext_resource type="Script" uid="uid://dxxlwx4fhyjj" path="res://effects/dust.gd" id="1_05oq8"]
+[ext_resource type="Texture2D" uid="uid://c8n7u3j2vw73" path="res://assets/img/dust.png" id="1_v1fbf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_05oq8"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="Dust" type="CPUParticles2D" unique_id=1263953206]
+texture_filter = 3
+material = SubResource("CanvasItemMaterial_05oq8")
+emitting = false
+amount = 20
+texture = ExtResource("1_v1fbf")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(20, 225)
+particle_flag_align_y = true
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+damping_min = 900.0
+damping_max = 900.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color = Color(0.6313726, 0.6313726, 0.6313726, 0.7294118)
+anim_offset_max = 1.0
+script = ExtResource("1_05oq8")

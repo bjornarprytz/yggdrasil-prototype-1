@@ -31,10 +31,12 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect/CenterContainer" unique_id=582668903]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 20
 
 [node name="Card" parent="CanvasLayer/ColorRect/CenterContainer/HBoxContainer" unique_id=284178042 instance=ExtResource("1_vhvtn")]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Card2" parent="CanvasLayer/ColorRect/CenterContainer/HBoxContainer" unique_id=2009720798 instance=ExtResource("1_vhvtn")]
 layout_mode = 2
+size_flags_horizontal = 3

@@ -1,31 +1,40 @@
 [gd_scene format=3 uid="uid://0p1skmnn5tq1"]
 
-[ext_resource type="Texture2D" uid="uid://6hjbcyqshel5" path="res://assets/img/hammer.png" id="1_kikvd"]
 [ext_resource type="Script" uid="uid://bsc8wovpfom6p" path="res://item_card.gd" id="1_q5obu"]
-[ext_resource type="PackedScene" uid="uid://dc2tbmyrtwuwj" path="res://text_box.tscn" id="2_rjlel"]
 
-[node name="Card" type="PanelContainer" unique_id=284178042]
+[node name="Control" type="Control" unique_id=566770370]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 388.0
+offset_bottom = 518.0
+
+[node name="Shadow" type="Panel" parent="." unique_id=1749635562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 11.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Card" type="Button" parent="." unique_id=1771573506]
 texture_filter = 3
-offset_right = 297.0
-offset_bottom = 395.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_type_variation = &"PowerUp"
 script = ExtResource("1_q5obu")
 
-[node name="Contents" type="VBoxContainer" parent="." unique_id=1910732528]
-layout_mode = 2
-
-[node name="Texture" type="TextureRect" parent="Contents" unique_id=49704]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("1_kikvd")
-expand_mode = 4
-stretch_mode = 5
-
-[node name="Info" parent="Contents" unique_id=807865520 instance=ExtResource("2_rjlel")]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Hello world"
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="button_down" from="Card" to="Card" method="_on_button_down"]
+[connection signal="button_up" from="Card" to="Card" method="_on_button_up"]
+[connection signal="mouse_entered" from="Card" to="Card" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="Card" method="_on_mouse_exited"]
+[connection signal="pressed" from="Card" to="Card" method="_on_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8qu3qc1ajr50"]
 
-[ext_resource type="Script" uid="uid://br4dwq6ybofl6" path="res://sheen.gd" id="1_7pk0w"]
+[ext_resource type="Script" uid="uid://br4dwq6ybofl6" path="res://effects/sheen.gd" id="1_7pk0w"]
 
 [node name="Sheen" type="Node2D" unique_id=2073769483]
 script = ExtResource("1_7pk0w")
