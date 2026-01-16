@@ -1,7 +1,6 @@
 extends Node2D
 
 var active_players: Array[AudioStreamPlayer] = []
-
 var dormant_players: Array[AudioStreamPlayer] = []
 
 
@@ -18,7 +17,9 @@ func _get_player() -> AudioStreamPlayer:
 		p.volume_db = -15
 		return p
 	else:
-		return dormant_players.pop_back()
+		var p = dormant_players.pop_back()
+		p.pitch_scale = randf_range(0.98, 1.02)
+		return p
 
 func _release_player(p: AudioStreamPlayer):
 	p.stop()

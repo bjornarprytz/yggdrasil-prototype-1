@@ -2,26 +2,28 @@
 
 [ext_resource type="Script" uid="uid://bsc8wovpfom6p" path="res://item_card.gd" id="1_q5obu"]
 
-[node name="Control" type="Control" unique_id=566770370]
+[node name="ItemCard" type="Control" unique_id=566770370]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 388.0
 offset_bottom = 518.0
+script = ExtResource("1_q5obu")
 
 [node name="Shadow" type="Panel" parent="." unique_id=1749635562]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = 11.0
-offset_right = 11.0
-offset_bottom = 11.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="Card" type="Button" parent="." unique_id=1771573506]
+unique_name_in_owner = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -31,10 +33,29 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_type_variation = &"PowerUp"
-script = ExtResource("1_q5obu")
 
-[connection signal="button_down" from="Card" to="Card" method="_on_button_down"]
-[connection signal="button_up" from="Card" to="Card" method="_on_button_up"]
-[connection signal="mouse_entered" from="Card" to="Card" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Card" to="Card" method="_on_mouse_exited"]
-[connection signal="pressed" from="Card" to="Card" method="_on_pressed"]
+[node name="Text" type="RichTextLabel" parent="Card" unique_id=707572333]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -20.0
+offset_right = 30.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+text = "Item"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Card" to="." method="_on_button_down"]
+[connection signal="button_up" from="Card" to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="Card" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Card" to="." method="_on_button_pressed"]

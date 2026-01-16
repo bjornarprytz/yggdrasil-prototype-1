@@ -7,6 +7,7 @@ func _on_start_button_pressed() -> void:
 
 func _on_start_button_mouse_entered() -> void:
 	NodeEffects.sheen(start_button)
+	Audio.play(preload("res://assets/sound/sword-schwing-40520.mp3"))
 
 
 func _on_start_button_mouse_exited() -> void:

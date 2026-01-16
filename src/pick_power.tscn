@@ -1,35 +1,40 @@
 [gd_scene format=3 uid="uid://kj838p74hdyx"]
 
+[ext_resource type="Script" uid="uid://crt07un101prb" path="res://pick_power.gd" id="1_2qh0q"]
 [ext_resource type="PackedScene" uid="uid://0p1skmnn5tq1" path="res://card.tscn" id="1_vhvtn"]
 
 [node name="PickPower" type="Node2D" unique_id=1621754992]
+script = ExtResource("1_2qh0q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=495354053]
+unique_name_in_owner = true
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=12529044]
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=1348767622]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.20932215, 0.19757664, 0.0012782805, 1)
+color = Color(4.2114408e-08, 0.2915281, 0.16113552, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ColorRect" unique_id=582668903]
+[node name="Cards" type="HBoxContainer" parent="CanvasLayer/Background" unique_id=582668903]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 345.0
+offset_left = 273.0
 offset_top = 257.5
-offset_right = 935.0
+offset_right = 1007.0
 offset_bottom = 462.5
-theme_override_constants/separation = 50
+theme_override_constants/separation = 120
 
-[node name="Card" parent="CanvasLayer/ColorRect/HBoxContainer" unique_id=284178042 instance=ExtResource("1_vhvtn")]
+[node name="Card" parent="CanvasLayer/Background/Cards" unique_id=284178042 instance=ExtResource("1_vhvtn")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Card2" parent="CanvasLayer/ColorRect/HBoxContainer" unique_id=2009720798 instance=ExtResource("1_vhvtn")]
+[node name="Card2" parent="CanvasLayer/Background/Cards" unique_id=2009720798 instance=ExtResource("1_vhvtn")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Card3" parent="CanvasLayer/ColorRect/HBoxContainer" unique_id=566770370 instance=ExtResource("1_vhvtn")]
+[node name="Card3" parent="CanvasLayer/Background/Cards" unique_id=566770370 instance=ExtResource("1_vhvtn")]
 layout_mode = 2
 size_flags_horizontal = 3
