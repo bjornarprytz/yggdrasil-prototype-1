@@ -10,7 +10,7 @@ env:
   ITCHIO_USERNAME: thewarlock
   GAME_NAME: yggdrasil-prototype-1
   PROJECT_PATH: "./src/"
-  GODOT_VERSION: 4.5-stable
+  GODOT_VERSION: 4.6-beta1
 
 jobs:
   export-game:
